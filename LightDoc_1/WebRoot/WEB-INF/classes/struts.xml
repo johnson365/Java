@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+
+ <package name="login" extends="struts-default">
+ <!-- 定义一个拦截器 -->
+ 	<interceptors>
+ 		<interceptor name="authority" class="edu.ustc.lightdoc.interceptor.AuthorityInterceptor">
+ 		</interceptor>
+ 		<!-- 拦截器栈 -->
+ 		<interceptor-stack name="mydefault">
+ 		<interceptor-ref name="authority"></interceptor-ref>
+ 		<interceptor-ref name="defaultStack"></interceptor-ref>
+ 		</interceptor-stack>
+ 	</interceptors>
+ 	<!-- 定义全局result -->
+ 	<global-results>
+ 		<result name="login">/login.html</result>
+ 	</global-results>
+ 	<action name="login" class="edu.ustc.lightdoc.action.LoginAction">
+ 		<result name="success" type="redirectAction">auditXml</result>
+  		<result name="login">login.html</result>
+  	</action>
+  	
+  	<action name="auditXml" class="edu.ustc.lightdoc.action.AuditAction">
+  		<result name="success">check.jsp</result>
+  		<result name="error">error.jsp</result>
+  	  	<interceptor-ref name="mydefault" />
+  	</action>
+  	
+  	 <action name="addXml" class="edu.ustc.lightdoc.action.AuditAction" method="addXml">
+  		<result name="success" type="redirectAction">auditXml</result>
+  		<result name="error">error.jsp</result>
+  		<interceptor-ref name="mydefault" />
+  	</action>
+  	
+  	<action name="preAudit" class="edu.ustc.lightdoc.action.AuditAction" method="preAudit">
+  		<result name="success">audit.jsp</result>
+  		<result name="error">error.jsp</result>
+   		 <interceptor-ref name="mydefault" /> 
+  	</action>
+ </package>
+ 
+  <package name="load" extends="struts-default">
+   <!-- 拦截器 -->
+ 	<interceptors >
+   <!-- 	 <interceptor name="updateFunc" 
+  	 class="edu.ustc.lightdoc.interceptor.UpdateFuncInterceptor" />
+  	 <interceptor name="preUpdate" 
+  	 class="edu.ustc.lightdoc.interceptor.preUpdateInterceptor" />--> 
+  	 <interceptor name="audit" 
+  	 class="edu.ustc.lightdoc.interceptor.AuditInterceptor" />
+  	 <interceptor name="loadMenu" 
+  	 class="edu.ustc.lightdoc.interceptor.LoadMenuInterceptor" />
+  	</interceptors>
+ 
+  	<!-- 全局结果 -->
+  	<global-results>
+  	<result name="search">/index.jsp</result>
+  	</global-results>
+  	<action name="loadMenu" class="edu.ustc.lightdoc.action.LoadAction" method="loadMenu">
+  		<result name="success">main.jsp</result>
+  		<result name="audit">audit.jsp</result>
+  		<result name="search">index.jsp</result>
+   		<interceptor-ref name="defaultStack"/>
+  		<interceptor-ref name="loadMenu"/> 
+  	</action>
+  	<action name="audit" class="edu.ustc.lightdoc.action.AuditAction" method="audit">
+  		<result name="success">success.jsp</result>
+  		<result name="error">error.jsp</result>
+  		 <interceptor-ref name="defaultStack"/>
+  		<interceptor-ref name="audit"/> 
+  	</action>
+ </package>
+
+ <package name="ajax" extends="json-default">
+  <!-- 定义一个拦截器 -->
+ 	<interceptors>
+ 		<interceptor name="updateFunc" class="edu.ustc.lightdoc.interceptor.UpdateFuncInterceptor">
+ 		</interceptor>
+ 		<!-- 拦截器栈 -->
+ 		<interceptor-stack name="mydefault">
+ 		<interceptor-ref name="updateFunc"></interceptor-ref>
+ 		<interceptor-ref name="defaultStack"></interceptor-ref>
+ 		</interceptor-stack>
+ 	</interceptors>
+ 	<!-- 定义全局result -->
+ 	<global-results>
+ 			<result name="search">/index.jsp</result>
+ 	</global-results>
+ 	<action name="loadStep" class="edu.ustc.lightdoc.action.LoadAction" method="loadStep">
+  		<result name="success" type="json">main.jsp</result>
+  		<result name="error">main.jsp</result>
+  	</action>
+  	<action name="updateStep" class="edu.ustc.lightdoc.action.UpdateAction" method="updateStep">
+  		<result name="success" type="json">main.jsp</result>
+  		<result name="error">main.jsp</result>
+  	</action>
+  	<action name="addStepToFunction" class="edu.ustc.lightdoc.action.UpdateAction" method="addStepToFunction">
+  		<result name="success" type="json">main.jsp</result>
+  		<result name="error">main.jsp</result>
+  	</action>
+  	<action name="delStep" class="edu.ustc.lightdoc.action.UpdateAction" method="delStep">
+  		<result name="success" type="json">main.jsp</result>
+  		<result name="error">main.jsp</result>
+  	</action>
+  	<action name="addSSToFunction" class="edu.ustc.lightdoc.action.FileUploadAction" method="addSSToFunction">
+  		<result name="success" type="json">audit.jsp</result>
+  		<result name="error">audit.jsp</result>
+  	</action>
+  	<action name="updateFunc" class="edu.ustc.lightdoc.action.UpdateAction" method="updateFunc">
+  		<result name="success" type="json">audit.jsp</result>
+  		<result name="error">audit.jsp</result>
+  		<!-- <interceptor-ref name="mydefault" /> -->
+  	</action>
+  	<action name="updateSoft" class="edu.ustc.lightdoc.action.UpdateAction" method="updateSoft">
+  		<result name="success" type="json">audit.jsp</result>
+  		<result name="error">audit.jsp</result>
+  	</action>
+ </package>
+</struts>   

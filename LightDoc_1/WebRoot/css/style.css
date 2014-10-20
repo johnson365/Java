@@ -1,0 +1,245 @@
+
+content-wrapper
+html, body	{
+	height: 100%;
+}
+
+body {
+	font: 12px/18px Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: url(../images/background.jpg)  no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6, span, p, input {
+	margin: 0;
+	padding: 0;
+}
+
+table, tr, td {
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+
+ul, li, ol {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	position: relative;
+	border: none;
+	z-index:30;
+}
+
+a {
+	color: #004a7b;
+	text-decoration: none;
+}
+a:hover {
+	cursor:pointer;
+}
+
+.clear {
+	clear: both;
+}
+
+#input{
+	float:right;
+	margin:5px 40px 0 0;
+	font-size:20px;
+}
+
+/* 1.1 Macintosh Safari Input Field Styling */
+
+input[type=text]:focus, input[type=submit]:focus, input[type=password]:focus, textarea:focus, select:focus {
+	outline: 0 none;
+}
+
+
+/* 2.0 Layout Structure */
+
+.container {
+	min-height: 100%;
+	margin-bottom: -177px;
+	position: relative;
+	top:10px;
+}
+
+.content-wrapper {
+	width: 100%;
+	position:relative;
+	top: 40px;
+	left: 53.5px;
+}
+
+.content-wrapper .content {
+	width: 919px;
+	padding: 0 0 25px 0;
+	overflow: hidden;
+}
+
+/* 3.0 Site Header */
+
+.header-wrapper {
+	width: 100%;
+	background: url(../images/header-wrapper-bg.jpg) top center repeat-x;
+}
+
+/* 6.0 Open Article Styling */
+
+.article-wrapper .title {
+	margin: -6px 0 9px 0;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: bold;
+	text-shadow: #fff 0 1px 0;
+}
+
+
+/* 16.0 Homepage Styling */
+
+/* .homepage-wrapper {
+	
+} */
+
+.homepage-slider {
+	width: 920px;
+	height: 580px;
+	position: relative;
+	overflow: hidden;
+}
+
+.homepage-slider .btn-previous {
+	width: 450px;
+	height: 530px;
+	text-indent: 5000px;
+	position: absolute;
+	z-index: 2;
+}
+
+.homepage-slider .btn-previous:hover {
+	background: url(../images/homepage-slider-btn-previous-bg.png) center left no-repeat;
+}
+
+.homepage-slider .btn-next {
+	margin: 0 0 0 450px;
+	width: 469px;
+	height: 530px;
+	text-indent: 5000px;
+	position: absolute;
+	z-index: 2;
+}
+
+.homepage-slider .btn-next:hover {
+	background: url(../images/homepage-slider-btn-next-bg.png) center right no-repeat;
+}
+
+.homepage-slider-item {
+	float: left;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	overflow: hidden;
+	background:#fff;
+	/* background-size:920px 528px;
+	-o-background-size:920px 528px;
+	-moz-background-size:920px 528px;
+	-webkit-background-size:920px 528px;
+	-ms-background-size:920px 528px; */
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;  
+}
+
+.homepage-slider-item .title{
+	padding:10px;
+	text-align:center;
+	display:block;
+	font-size:1.7em;
+	font-weight:600px;
+	margin:50px 200px;
+	border:#03F groove 1px;
+	box-shadow:10px 10px 5px #CCC;
+	border-radius:5px;
+}
+
+.homepage-slider-item .desc{
+	display:block;
+	width:auto;
+	height:auto;
+	padding:10px;
+	font-size:1.2em;
+	font-family:"MS Serif", "New York", serif;
+	margin:10px 200px;
+	border:#03F dashed 1px;
+	box-shadow:10px 10px 5px #CCC;
+	border-radius:10px;
+}
+
+.pt-page-current{
+	visibility: visible;
+	z-index: 1;
+}
+
+.homepage-slider-item .background {
+	margin: 430px 0 0 0;
+	width: 919px;
+	height: 83px;
+	background: url(../images/top-stories-info-bg.png) 0 0 no-repeat;
+	position: absolute;
+	z-index: 1;
+}
+ 
+.stepDesc {
+	width:100%;
+	padding:5px 20px;
+	display: block;
+	position:absolute;
+	bottom:0px;
+	color:#fff;
+	z-index: 99;
+	font-size: 14px;
+	background: rgba(0,0,0,0.5); 
+	opacity:100;
+}
+/* add  */
+
+.bg {
+	width:1024px;height:651px;background:url(../images/bg.png) no-repeat;margin:10px auto;
+}
+
+#closeBtn{position:absolute;  right:10px;  top:10px;  cursor:pointer; }
+
+#progress{
+	margin:20px 0 0 0;
+	align:center;
+	width:180px;
+	position:relative; left:45%;
+}
+#progress span{
+	color:#fff;
+	text-align:center;
+	float: left;
+	margin: 0px 2px; 
+	overflow: hidden; 
+	cursor: pointer; 
+	width:18px; 
+	height:18px;
+}
+
+.spanSelect, #progress span:hover{
+	color:#f00;
+	background:url(../images/icon1.gif) no-repeat;
+}
+

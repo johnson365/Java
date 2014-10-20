@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tag-config>
+<!-- 标签的内容映射到 name上
+	 name是默认定义的标签名
+	 标签内容是用户自定义的标签名	
+ -->
+	<tag name="software">theme</tag>
+	<tag name="author">company</tag>
+	<tag name="modules">activities</tag>
+	<tag name="module">activity</tag>
+	<tag name="funcs">procedures</tag>
+	<tag name="func">procedure</tag>
+	<tag name="stepSet">instructs</tag>
+	<tag name="step">instruct</tag>
+	<tag name="title">name</tag>
+	<tag name="desc">info</tag>
+</tag-config>

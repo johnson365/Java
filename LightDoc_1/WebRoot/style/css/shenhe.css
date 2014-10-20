@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+
+/* html
+{
+	width:100%;
+	height:100%;
+}
+body 
+{
+	background-color:#fff;
+	font-size:18px;
+	font-family:"Arial","Tahoma","微软雅黑","雅黑";
+	line-height:18px;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+}
+
+img
+{
+	border:0px;
+	vertical-align:middle;
+	padding:0px;
+	margin:0px;
+} */
+
+input,button
+{
+	font-family:"Arial","Tahoma","微软雅黑","雅黑";
+	border:0px;
+	vertical-align:middle;
+	margin:8px;
+	line-height:18px;	
+	font-size:18px;
+}
+.pbtn1
+{	
+	border:solid 2px #dcdcdc;
+	padding:4px 14px 4px 20px;
+	color:#959595;
+}
+.btn1
+{
+	background:url("../../images/ok.jpg") no-repeat 8px center;
+	background-color:#f9f9f9;
+}
+.btn2
+{
+	background:url("../../images/delete.jpg") no-repeat 8px center;
+	background-color:#f9f9f9;
+}
+.btn11
+{
+	width:143px;
+	height:40px;
+	background:url("../style/bg11.jpg") no-repeat left top;
+	color:#FFF;
+}
+.btn12
+{
+	width:143px;
+	height:40px;
+	background:url("../style/bg12.jpg") no-repeat left top;
+	color:#FFF;
+}
+.input1 {
+	border-style: solid; 
+	border-width: 4px;
+	border-color: #336ca6;
+	width: 300px;
+}
+textarea {
+	border-style: solid; 
+	border-width: 4px;
+	border-color: #336ca6;
+	height: 80px;
+	width: 300px;
+}
+
+.file {
+	border-style: solid;
+	border-color: #336ca6;
+	border-width: 2px;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="domHelper" class="edu.ustc.lightdoc.parserImpl.DOMHelper"></bean>
+	<bean id="cfgDomHelper" class="edu.ustc.lightdoc.parserImpl.CfgDOMHelper"></bean>
+	<bean id="loadService" class="edu.ustc.lightdoc.serviceImpl.LoadService">
+		<property name="domHelper">
+			<ref bean="domHelper"/>
+		</property>
+		<property name="cfgDomHelper">
+			<ref bean="cfgDomHelper"/>
+		</property>
+	</bean>
+	<bean id="loadAction" class="edu.ustc.lightdoc.action.LoadAction">
+		<property name="loadService">
+			<ref bean="loadService"></ref>
+		</property>
+	</bean>
+	<bean id="updateService" class="edu.ustc.lightdoc.serviceImpl.UpdateService">
+		<property name="domHelper">
+			<ref bean="domHelper"/>
+		</property>
+		<property name="cfgDomHelper">
+			<ref bean="cfgDomHelper"/>
+		</property>
+	</bean>
+	<bean id="fileUploadAction" class="edu.ustc.lightdoc.action.FileUploadAction">
+		<property name="updateService">
+			<ref bean="updateService"/>
+		</property>
+	</bean>
+	<bean id="updateAction" class="edu.ustc.lightdoc.action.UpdateAction">
+		<property name="updateService">
+			<ref bean="updateService"/>
+		</property>
+		<property name="loadService">
+			<ref bean="loadService"></ref>
+		</property>
+	</bean>
+	<bean id="auditAction" class="edu.ustc.lightdoc.action.AuditAction">
+		<property name="updateService">
+			<ref bean="updateService"></ref>
+		</property>
+		<property name="loadService">
+			<ref bean="loadService"/>
+		</property>
+	</bean>
+</beans>

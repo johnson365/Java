@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>LD后台登陆</title>
+	<meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/tooltips.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/login.css" />
+</head>
+<body >
+	<div class="prelogo">
+		<img alt="logo" src="images/prelogo.png">
+	</div>
+ 	<div class="content">
+    	<form action="login.action" method="post" id="login_form">
+    	<table width="100%">
+        	<thead>
+            	<tr><td colspan="2" class="thead" align="center">LD后台管理员登录</td></tr>
+            	
+            </thead>
+            <tbody>
+                <tr>
+                  <th><em class="red">*</em> 账号：</th>
+                  <td><input type="text" value="" id="username" name="username" class="username ipt"> <span class="tooltip">(说明) <span>*表示必填哦</span></span></td>
+                </tr>
+                <tr>
+                  <th><em class="red">*</em> 密码：</th>
+                  <td><input type="password" value="" id="pass" name="password" class="password ipt"></td>
+                </tr>
+                <tr>
+                  <th class="pd15"></th>
+                  <td class="pd15">
+                  	<button id="submit_btn" type="button">登录</button>
+                  	<button id="reset_btn" type="button">取消</button>
+                   <!--  <p class="line"><input type="checkbox" id="remember" value=""> <label for="remember">记住我</label></p> -->
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</body>
+</html>
